@@ -6,6 +6,7 @@ export default {
 	}
 };
 
+
 const fetchRequest = () => {
 	return fetch(`${BASE_URL}`)
 		.then(res => res.status <= 400 ? res : Promise.reject(res))

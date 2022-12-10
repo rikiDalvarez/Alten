@@ -1,25 +1,15 @@
 import React, { useEffect, useState } from 'react'
-
+import { Outlet } from 'react-router-dom'
+import Header from "../../Components/Header"
 import ApiClient from "../../Services/ApiClient"
 
 function Home() {
-	const [products, setProducts] = useState([])
-	useEffect(() => {
-		ApiClient.getData()
-			.then(products => {
-				setProducts(products.data)
-			})
-	}, [])
 
 	return (
-		<div className="bg-amber-200 flex container mx-auto flex-wrap flex-row gap-10 ">
-			{console.log(products)}
-			{products.map(product => (
-				<div key={product._id} >
-					{product._id}
-				</div>
-			))}
-		</div>
+		<>
+			<Header></Header>
+			<Outlet></Outlet>
+		</>
 	)
 }
 
