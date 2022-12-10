@@ -1,0 +1,12 @@
+.breadcrumb-not-active {
+	color: #ddd!important;
+}
+
+.breadcrumb-active {
+	color: gold!important	;
+}
+
+.breadcrumb-arrow {
+	margin-left: 10px;
+	margin-right: 10px;
+}
