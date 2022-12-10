@@ -1,14 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { useState, useEffect } from 'react'
+import ApiClient from './Services/ApiClient';
+
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    ApiClient.getData()
+      .then(products => {
+        setProducts(products.data)
+      })
+  }, [])
 
   return (
-    <div>
-      test
-    </div>
+    <>
+      {console.log(products)}
+      {products.map(product => (
+        <div>
+          {product._id}
+        </div>
+      ))}
+    </>
   )
 }
 
