@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react'
 import ApiClient from './Services/ApiClient';
-
-
+import router from "./routes"
+import { RouterProvider } from "react-router-dom"
 
 function App() {
   const [products, setProducts] = useState([])
-
   useEffect(() => {
     ApiClient.getData()
       .then(products => {
@@ -14,14 +13,7 @@ function App() {
   }, [])
 
   return (
-    <div className="bg-amber-200">
-      {console.log(products)}
-      {products.map(product => (
-        <div>
-          {product._id}
-        </div>
-      ))}
-    </div>
+    <RouterProvider router={router} />
   )
 }
 
