@@ -1,12 +1,8 @@
 .breadcrumb-not-active {
-	color: #ddd!important;
+	color: rgb(158, 157, 157)!important;
 }
 
 .breadcrumb-active {
-	color: gold!important	;
+	color: #1f2937!important	;
 }
 
-.breadcrumb-arrow {
-	margin-left: 10px;
-	margin-right: 10px;
-}

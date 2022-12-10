@@ -17,7 +17,7 @@ function BreadCrumbs() {
 			{
 				location.pathname.startsWith("/products") || location.pathname.startsWith("/product/") ?
 					<>
-						<span className="text-yellow-400"> {">"}</span>
+						<span className="text-gray-800"> {">"}</span>
 						<Link to="/products"
 							className={location.pathname.startsWith("/products") || location.pathname === "/products/:id" ? "breadcrumb-active" : "breadcrumb-not-active"}>
 							Products
@@ -28,7 +28,7 @@ function BreadCrumbs() {
 			{
 				location.pathname.startsWith("/product/") ?
 					<>
-						<span className="text-yellow-400"> {">"}</span>
+						<span className="text-gray-800"	> {">"}</span>
 						<Link to={location.pathname}
 							className={location.pathname.startsWith("/product/") ? "breadcrumb-active" : "breadcrumb-not-active"}>
 							Product {id}
