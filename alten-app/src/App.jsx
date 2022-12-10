@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import ApiClient from './Services/ApiClient';
 
-import './App.css'
+
 
 function App() {
   const [products, setProducts] = useState([])
@@ -14,14 +14,14 @@ function App() {
   }, [])
 
   return (
-    <>
+    <div className="bg-amber-200">
       {console.log(products)}
       {products.map(product => (
         <div>
           {product._id}
         </div>
       ))}
-    </>
+    </div>
   )
 }
 
