@@ -13,7 +13,6 @@ function BreadCrumbs() {
 			>
 				Home
 			</Link>
-
 			{
 				location.pathname.startsWith("/products") || location.pathname.startsWith("/product/") ?
 					<>

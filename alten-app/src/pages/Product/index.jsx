@@ -1,4 +1,5 @@
 import React from 'react'
+import { useLocation } from "react-router-dom"
 
 const features = [
 	{ name: 'Origin', description: 'Designed by Good Goods, Inc.' },
@@ -10,6 +11,9 @@ const features = [
 ]
 
 export default function Product() {
+	const location = useLocation();
+	const product = location.state;
+	console.log({ product })
 
 	return (
 		<div className="bg-white">
