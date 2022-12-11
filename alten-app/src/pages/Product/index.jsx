@@ -1,60 +1,49 @@
-import React from 'react'
-import { useLocation } from "react-router-dom"
-
-const features = [
-	{ name: 'Origin', description: 'Designed by Good Goods, Inc.' },
-	{ name: 'Material', description: 'Solid walnut base with rare earth magnets and powder coated steel card cover' },
-	{ name: 'Dimensions', description: '6.25" x 3.55" x 1.15"' },
-	{ name: 'Finish', description: 'Hand sanded and finished with natural oil' },
-	{ name: 'Includes', description: 'Wood card tray and 3 refill packs' },
-	{ name: 'Considerations', description: 'Made from natural materials. Grain and color vary with each item.' },
-]
+import React, { useEffect, useState } from 'react'
+import { useLocation, useParams, } from "react-router-dom"
+import products from "../../Mocks/index"
 
 export default function Product() {
-	const location = useLocation();
-	const product = location.state;
-	console.log({ product })
+	const { id } = useParams()
+	console.log({ products })
+
+	const [product, setProduct] = useState();
+
+	useEffect(() => {
+		const filteredProduct = products.find((element) => element.id == id)
+		setProduct(filteredProduct)
+	}, [])
+
+
 
 	return (
 		<div className="bg-white">
-			<div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8 py-24 px-4 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+			<div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8  px-4 sm:px-6 sm:py-4 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
 				<div>
 					<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Technical Specifications</h2>
-					<p className="mt-4 text-gray-500">
-						The walnut wood card tray is precision milled to perfectly fit a stack of Focus cards. The powder coated
-						steel divider separates active cards from new ones, or can be used to archive important task lists.
-					</p>
-
 					<dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
-						{features.map((feature) => (
-							<div key={feature.name} className="border-t border-gray-200 pt-4">
-								<dt className="font-medium text-gray-900">{feature.name}</dt>
-								<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>
-							</div>
-						))}
+						<div className="border-t border-gray-200 pt-4">
+							<dt className="font-medium text-gray-900">Brand: {product?.brand}</dt>
+							<dd className="mt-2 text-sm text-gray-500">Name: {product?.name}</dd>
+							<dd className="mt-2 text-sm text-gray-500">Price: €{product?.price}</dd>
+							<dd className="mt-2 text-sm text-gray-500">CPU: {product?.cpu}</dd>
+							<dd className="mt-2 text-sm text-gray-500">Memory: {product?.memory}</dd>
+							<dd className="mt-2 text-sm text-gray-500">Operating System: {product?.operative_system}</dd>
+							<dd className="mt-2 text-sm text-gray-500">Resolution:{product?.resolution}</dd>
+							<dd className="mt-2 text-sm text-gray-500">Battery: {product?.battery}</dd>
+							<dd className="mt-2 text-sm text-gray-500">Camera: {product?.camera}</dd>
+							<dd className="mt-2 text-sm text-gray-500">Dimension: {product?.dimension}</dd>
+							<dd className="mt-2 text-sm text-gray-500">Weight: {product?.weight}</dd>
+
+						</div>
 					</dl>
 				</div>
-				<div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
+				<div className="">
 					<img
-						src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg"
+						src="../../../public/iphone.webp"
 						alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
 						className="rounded-lg bg-gray-100"
 					/>
-					<img
-						src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-02.jpg"
-						alt="Top down view of walnut card tray with embedded magnets and card groove."
-						className="rounded-lg bg-gray-100"
-					/>
-					<img
-						src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-03.jpg"
-						alt="Side of walnut card tray with card groove and recessed card area."
-						className="rounded-lg bg-gray-100"
-					/>
-					<img
-						src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-04.jpg"
-						alt="Walnut card tray filled with cards and card angled in dedicated groove."
-						className="rounded-lg bg-gray-100"
-					/>
+
 				</div>
 			</div>
 		</div>

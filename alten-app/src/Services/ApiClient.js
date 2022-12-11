@@ -1,9 +1,9 @@
-const BASE_URL = 'https://api.storerestapi.com/products'
+const BASE_URL = 'http://localhost:3001/products'
 
 export default {
 	getData: () => {
 		return fetchRequest();
-	}
+	},
 };
 
 
