@@ -7,7 +7,7 @@ import BreadCrumbs from "../BreadCrumbs"
 import logo from "../../../public/ALTEN-Logo.svg"
 
 const navigation = [
-	{ name: 'Home', href: 'products', current: true },
+	{ name: 'Products', href: 'products', current: true },
 ]
 
 function classNames(...classes) {
