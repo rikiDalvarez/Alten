@@ -9,7 +9,6 @@ function ProductList() {
 	useEffect(() => {
 		ApiClient.getData()
 			.then(products => {
-				console.log(products)
 				setProducts(products)
 			})
 	}, [])
@@ -25,7 +24,7 @@ function ProductList() {
 						{products?.filter((product) => {
 							if (product.name.includes(filter) || product.brand.includes(filter)) return true
 						}).map((product) => (
-							<Link state={product} to={`/product/${product.id}`} className="hover:bg-blue-300 active:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 rounded-md">{console.log({ product })}
+							<Link state={product} to={`/product/${product.id}`} className="hover:bg-blue-300 active:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 rounded-md">
 								<div key={product.id} className="group relative">
 									<div className="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
 										<img

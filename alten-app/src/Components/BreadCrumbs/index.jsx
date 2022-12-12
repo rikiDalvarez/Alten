@@ -4,7 +4,6 @@ import "./style.css"
 function BreadCrumbs() {
 	const location = useLocation();
 	const { id } = useParams();
-	console.log(location)
 
 	return (
 		<nav>

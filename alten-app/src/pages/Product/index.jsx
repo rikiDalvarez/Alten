@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useParams, } from "react-router-dom"
 import products from "../../Mocks/index"
+import { useForm } from "react-hook-form"
 
 export default function Product() {
 	const { id } = useParams()
-	console.log({ products })
-
 	const [product, setProduct] = useState();
+
+	const { register, handleSubmit } = useForm();
+
+	const onSubmit = (data) => {
+		console.log(data)
+	}
 
 	useEffect(() => {
 		const filteredProduct = products.find((element) => element.id == id)
 		setProduct(filteredProduct)
 	}, [])
-
 
 
 	return (
@@ -33,17 +37,33 @@ export default function Product() {
 							<dd className="mt-2 text-sm text-gray-500">Camera: {product?.camera}</dd>
 							<dd className="mt-2 text-sm text-gray-500">Dimension: {product?.dimension}</dd>
 							<dd className="mt-2 text-sm text-gray-500">Weight: {product?.weight}</dd>
-
 						</div>
 					</dl>
+					<form onSubmit={handleSubmit(onSubmit)} className="actions m-6 flex">
+						<div classNmae="m-4 p-4">
+							<label>Color:</label>
+							<select className="">
+								<option value="black">Black</option>
+								<option value="silver">Silver</option>
+								<option value="white">White</option>
+							</select>
+						</div>
+						<div className="ml-6">
+							<label>Size:</label>
+							<select>
+								<option value="medium">Medium</option>
+								<option value="small">Small</option>
+							</select>
+						</div>
+						<input className="ml-6 border-4 border-gray-500 " type="submit" value="add"></input>
+					</form>
 				</div>
 				<div className="">
 					<img
 						src="../../../public/iphone.webp"
-						alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
+						alt="a gray mobile phone "
 						className="rounded-lg bg-gray-100"
 					/>
-
 				</div>
 			</div>
 		</div>
