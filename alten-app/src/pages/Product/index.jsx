@@ -6,12 +6,14 @@ import { useForm } from "react-hook-form"
 export default function Product() {
 	const { id } = useParams()
 	const [product, setProduct] = useState();
-
 	const { register, handleSubmit } = useForm();
 
 	const onSubmit = (data) => {
 		console.log(data)
 	}
+
+	/* as im using mockon for the first time i will just use a mock data, i dont know yet how to create a route with params id on this app
+	*/
 
 	useEffect(() => {
 		const filteredProduct = products.find((element) => element.id == id)
@@ -40,9 +42,9 @@ export default function Product() {
 						</div>
 					</dl>
 					<form onSubmit={handleSubmit(onSubmit)} className="actions m-6 flex">
-						<div classNmae="m-4 p-4">
+						<div >
 							<label>Color:</label>
-							<select className="">
+							<select className="" {...register("color")}>
 								<option value="black">Black</option>
 								<option value="silver">Silver</option>
 								<option value="white">White</option>
@@ -50,12 +52,12 @@ export default function Product() {
 						</div>
 						<div className="ml-6">
 							<label>Size:</label>
-							<select>
+							<select {...register("size")}>
 								<option value="medium">Medium</option>
 								<option value="small">Small</option>
 							</select>
 						</div>
-						<input className="ml-6 border-4 border-gray-500 " type="submit" value="add"></input>
+						<input className=" w-12 hover:cursor-pointer hover:bg-gray-300 rounded-md ml-6 border-4 border-gray-500 active:bg-gray-500 focus:outline-none focus:ring focus:ring-gray-300 " type="submit" value="add"></input>
 					</form>
 				</div>
 				<div className="">
