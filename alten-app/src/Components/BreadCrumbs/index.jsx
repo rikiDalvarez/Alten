@@ -9,8 +9,7 @@ function BreadCrumbs() {
     <nav>
       <Link
         to="/"
-        className={location.pathname === '/' ? 'breadcrumb-active' : 'breadcrumb-not-active'}
-      >
+        className={location.pathname === '/' ? 'breadcrumb-active' : 'breadcrumb-not-active'}>
         Home
       </Link>
       {location.pathname.startsWith('/products') || location.pathname.startsWith('/product/') ? (
@@ -22,8 +21,7 @@ function BreadCrumbs() {
               location.pathname.startsWith('/products') || location.pathname === '/products/:id'
                 ? 'breadcrumb-active'
                 : 'breadcrumb-not-active'
-            }
-          >
+            }>
             Products
           </Link>
         </>
@@ -39,8 +37,7 @@ function BreadCrumbs() {
               location.pathname.startsWith('/product/')
                 ? 'breadcrumb-active'
                 : 'breadcrumb-not-active'
-            }
-          >
+            }>
             Product {id}
           </Link>
         </>

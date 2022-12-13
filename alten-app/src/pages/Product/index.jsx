@@ -63,8 +63,7 @@ export default function Product() {
             <input
               className=" w-12 hover:cursor-pointer hover:bg-gray-300 rounded-md ml-6 border-4 border-gray-500 active:bg-gray-500 focus:outline-none focus:ring focus:ring-gray-300 "
               type="submit"
-              value="add"
-            ></input>
+              value="add"></input>
           </form>
         </div>
         <div className="">
