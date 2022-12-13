@@ -1,10 +1,7 @@
-
-
 .breadcrumb-not-active {
-	color: rgb(158, 157, 157)!important;
+  color: rgb(158, 157, 157) !important;
 }
 
 .breadcrumb-active {
-	color: #1f2937!important	;
+  color: #1f2937 !important	;
 }
-

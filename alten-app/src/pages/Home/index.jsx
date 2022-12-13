@@ -1,15 +1,14 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Header from "../../Components/Header"
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Header from '../../Components/Header';
 
 function Home() {
-
-	return (
-		<>
-			<Header></Header>
-			<Outlet></Outlet>
-		</>
-	)
+  return (
+    <>
+      <Header></Header>
+      <Outlet></Outlet>
+    </>
+  );
 }
 
-export default Home
+export default Home;
