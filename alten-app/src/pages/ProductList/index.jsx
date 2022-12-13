@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import ApiClient from "../../Services/ApiClient"
-import { Link, useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 import Search from '../../Components/Search'
 
 function ProductList() {
 	const [products, setProducts] = useState([]);
 	const [filter, setFilter] = useState("");
+
 	useEffect(() => {
 		ApiClient.getData()
 			.then(products => {
